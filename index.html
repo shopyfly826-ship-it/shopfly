@@ -66,7 +66,8 @@
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
                 <div class="hidden lg:flex gap-8 text-sm font-medium tracking-widest uppercase">
-                    <a href="#" onclick="navigateTo('home')" class="hover:text-accent transition-colors">Shop</a>
+                    <a href="#" onclick="navigateTo('home')" class="hover:text-accent transition-colors">Home</a>
+                    <a href="#" onclick="navigateTo('all')" class="hover:text-accent transition-colors">Shop All</a>
                     <a href="#" onclick="navigateTo('about')" class="hover:text-accent transition-colors">Our Story</a>
                 </div>
             </div>
@@ -115,12 +116,12 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="bg-brand-50 rounded-3xl p-8 flex flex-col items-start justify-center border border-brand-100 hover:shadow-lg transition-shadow">
                         <div class="w-12 h-12 bg-brand-900 text-brand-50 rounded-full flex items-center justify-center mb-6">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            <i data-lucide="truck" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif text-2xl mb-2">Pan-India Delivery</h3>
-                        <p class="text-brand-700 text-sm leading-relaxed">Fast, reliable shipping from Kashmir to Kanyakumari. Free on all orders.</p>
+                        <h3 class="font-serif text-2xl mb-2">Free Delivery</h3>
+                        <p class="text-brand-700 text-sm leading-relaxed">Fast, reliable shipping from Kashmir to Kanyakumari. Absolutely free on all orders.</p>
                     </div>
-                    <div class="bg-brand-900 text-brand-50 rounded-3xl p-8 flex flex-col items-start justify-center shadow-xl transform md:-translate-y-4">
+                    <div class="bg-brand-900 text-brand-50 rounded-3xl p-8 flex flex-col items-start justify-center shadow-xl">
                         <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mb-6">
                             <i data-lucide="banknote" class="w-6 h-6"></i>
                         </div>
@@ -129,10 +130,10 @@
                     </div>
                     <div class="bg-brand-50 rounded-3xl p-8 flex flex-col items-start justify-center border border-brand-100 hover:shadow-lg transition-shadow">
                         <div class="w-12 h-12 bg-brand-900 text-brand-50 rounded-full flex items-center justify-center mb-6">
-                            <i data-lucide="shield-check" class="w-6 h-6"></i>
+                            <i data-lucide="refresh-cw" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="font-serif text-2xl mb-2">Premium Quality</h3>
-                        <p class="text-brand-700 text-sm leading-relaxed">Every product is rigorously tested to withstand the dynamic Indian environment.</p>
+                        <h3 class="font-serif text-2xl mb-2">7 Days Easy Returns</h3>
+                        <p class="text-brand-700 text-sm leading-relaxed">Shop with confidence. Not happy with your purchase? Return it within 7 days, no questions asked.</p>
                     </div>
                 </div>
             </section>
@@ -158,7 +159,7 @@
                         <h2 class="font-serif text-4xl md:text-5xl mb-3 text-brand-900">Trending Now</h2>
                         <p class="text-brand-600 text-lg">Smart solutions for the modern Indian home.</p>
                     </div>
-                    <button class="flex items-center gap-2 text-brand-900 font-medium hover:text-accent transition-colors pb-1 border-b border-brand-900 hover:border-accent">
+                    <button onclick="navigateTo('all')" class="flex items-center gap-2 text-brand-900 font-medium hover:text-accent transition-colors pb-1 border-b border-brand-900 hover:border-accent">
                         View All <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -185,13 +186,29 @@
             </section>
         </div>
 
+        <!-- ALL PRODUCTS VIEW -->
+        <div id="view-all" class="page-view hidden pt-32 pb-24 max-w-7xl mx-auto px-4 min-h-screen">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                <div>
+                    <h1 class="font-serif text-4xl md:text-6xl text-brand-900 mb-4">All Products</h1>
+                    <p class="text-brand-600 text-lg">Browse our complete collection of premium lifestyle essentials.</p>
+                </div>
+                <button onclick="navigateTo('home')" class="flex items-center gap-2 text-brand-900 font-medium hover:text-accent transition-colors">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+                </button>
+            </div>
+            <div id="all-products-grid" class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12">
+                <!-- All products injected here by JS -->
+            </div>
+        </div>
+
         <!-- ABOUT US VIEW -->
         <div id="view-about" class="page-view hidden pt-32 pb-24 max-w-4xl mx-auto px-4 min-h-screen">
             <div class="text-center mb-16">
                 <p class="text-accent font-medium tracking-[0.2em] uppercase text-sm mb-4">Our Story</p>
                 <h1 class="font-serif text-5xl md:text-6xl text-brand-900">Rooted in India.<br>Designed for the World.</h1>
             </div>
-            <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&q=80" alt="Our Team" class="w-full h-80 object-cover rounded-3xl mb-12 shadow-xl" referrerpolicy="no-referrer" />
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80" alt="Our Story" class="w-full h-80 object-cover rounded-3xl mb-12 shadow-xl" referrerpolicy="no-referrer" />
             <div class="prose prose-lg max-w-none text-brand-700 space-y-8 leading-relaxed font-light">
                 <p><strong class="font-medium text-brand-900">Shopfly</strong> was born out of a simple observation: the modern Indian lifestyle is evolving rapidly, yet finding high-quality, reliable everyday gadgets remains a challenge.</p>
                 <p>We started our journey in Bengaluru with a mission to bridge this gap. From navigating dusty commutes (hello, Portable Car Vacuum!) to finding peace in a chaotic day (Yoga Puller Peddler), we curate products that genuinely solve problems for the Indian consumer.</p>
@@ -534,15 +551,11 @@
                 <p class="text-brand-200 max-w-sm mb-8 leading-relaxed font-light">
                     Modern lifestyle essentials curated for the dynamic Indian consumer. Quality, utility, and design in every parcel.
                 </p>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-accent transition-colors cursor-pointer" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-accent transition-colors cursor-pointer" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
-                </div>
             </div>
             <div>
                 <h3 class="font-medium mb-6 text-white tracking-widest uppercase text-sm">Shop</h3>
                 <ul class="space-y-4 text-brand-200 text-sm font-light">
-                    <li><a href="#" onclick="navigateTo('home')" class="hover:text-accent transition-colors">All Products</a></li>
+                    <li><a href="#" onclick="navigateTo('all')" class="hover:text-accent transition-colors">All Products</a></li>
                     <li><a href="#" onclick="navigateTo('about')" class="hover:text-accent transition-colors">Our Story</a></li>
                 </ul>
             </div>
@@ -591,7 +604,8 @@
             </button>
         </div>
         <div class="flex flex-col p-6 gap-6 text-lg font-medium text-brand-900">
-            <a href="#" onclick="navigateTo('home'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="shopping-bag" class="w-5 h-5"></i> Shop</a>
+            <a href="#" onclick="navigateTo('home'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="home" class="w-5 h-5"></i> Home</a>
+            <a href="#" onclick="navigateTo('all'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="shopping-bag" class="w-5 h-5"></i> Shop All</a>
             <a href="#" onclick="navigateTo('about'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="info" class="w-5 h-5"></i> Our Story</a>
             <a href="#" onclick="navigateTo('terms'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="file-text" class="w-5 h-5"></i> Terms & Conditions</a>
             <a href="#" onclick="navigateTo('privacy'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="shield" class="w-5 h-5"></i> Privacy Policy</a>
@@ -633,8 +647,7 @@
             { 
                 id: 1, 
                 name: 'Portable Car Vacuum Cleaner', 
-                price: 1249, 
-                originalPrice: 2499,
+                price: 999, 
                 image: 'https://m.media-amazon.com/images/I/51xLLJOLsoL._SL1000_.jpg', 
                 category: 'Auto Accessories', 
                 description: 'Keep your car spotless with this high-power portable vacuum cleaner. Designed for deep cleaning, it easily reaches tight corners and under seats.',
@@ -797,6 +810,11 @@
             
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Refresh icons
+            if (window.lucide) {
+                lucide.createIcons();
+            }
         }
 
         function toggleWishlist(productId, event) {
@@ -816,6 +834,11 @@
             return `
                 <div class="group cursor-pointer flex flex-col" onclick="openProductPage(${product.id})" tabindex="0" role="button" onkeydown="if(event.key==='Enter') openProductPage(${product.id})">
                     <div class="relative aspect-[4/5] bg-brand-50 rounded-3xl overflow-hidden mb-4 border border-brand-100">
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-sm flex items-center gap-1">
+                                <i data-lucide="truck" class="w-3 h-3"></i> FREE DELIVERY
+                            </span>
+                        </div>
                         <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" referrerpolicy="no-referrer" />
                         <button onclick="event.stopPropagation(); addToCart(${product.id})" class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-white/90 backdrop-blur-md text-brand-900 py-2 sm:py-3.5 rounded-xl sm:rounded-2xl text-xs sm:text-base font-medium opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-brand-900 hover:text-white shadow-lg flex justify-center items-center gap-1 sm:gap-2" aria-label="Add ${product.name} to cart">
                             <i data-lucide="shopping-bag" class="w-3 h-3 sm:w-4 sm:h-4"></i> <span class="hidden sm:inline">Add to Cart</span><span class="sm:hidden">Add</span>
@@ -831,7 +854,6 @@
                             <p class="font-semibold text-brand-900">${formatINR(product.price)}</p>
                             ${product.originalPrice ? `<p class="text-sm text-brand-400 line-through">${formatINR(product.originalPrice)}</p>` : ''}
                         </div>
-                        ${product.originalPrice ? `<p class="text-xs text-emerald-600 font-medium mt-1">Buy 1 Get 1 Free</p>` : ''}
                     </div>
                 </div>
             `;
@@ -847,7 +869,20 @@
             }
 
             // Render All Products (Trending Now)
-            productGrid.innerHTML = PRODUCTS.map(createProductCard).join('');
+            if (productGrid) {
+                productGrid.innerHTML = PRODUCTS.map(createProductCard).join('');
+            }
+
+            // Render All Products View
+            const allProductsGrid = document.getElementById('all-products-grid');
+            if (allProductsGrid) {
+                allProductsGrid.innerHTML = PRODUCTS.map(createProductCard).join('');
+            }
+
+            // Refresh icons
+            if (window.lucide) {
+                lucide.createIcons();
+            }
         }
 
         // --- Cart Logic ---
@@ -1046,7 +1081,6 @@
                         <p class="text-2xl font-semibold text-brand-900">${formatINR(product.price)}</p>
                         ${product.originalPrice ? `<p class="text-lg text-brand-400 line-through">${formatINR(product.originalPrice)}</p><span class="bg-rose-100 text-rose-600 text-xs font-bold px-2 py-1 rounded">50% OFF</span>` : ''}
                     </div>
-                    ${product.originalPrice ? `<p class="text-emerald-600 font-medium mb-6 flex items-center gap-2"><i data-lucide="tag" class="w-4 h-4"></i> Buy 1 Get 1 Free on this product!</p>` : ''}
                     <p class="text-brand-700 text-lg leading-relaxed mb-8 font-light">${product.description}</p>
                     
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
